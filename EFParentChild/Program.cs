@@ -6,7 +6,23 @@ namespace EFParentChild
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using (var dbContext = new DbParentChild())
+            {
+                var parent = new Parent
+                {
+                    FirstName = "Joe",
+                    LastName = "Blow"
+                };
+                parent.Children.Add(
+                    new Child
+                    {
+                        FirstName = "LittleJoe",
+                        LastName = "Blow"
+                    });
+
+                dbContext.Add(parent);
+                dbContext.SaveChanges();
+            }
         }
     }
 }
