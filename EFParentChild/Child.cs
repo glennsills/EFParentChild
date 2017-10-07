@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace EFParentChild
+﻿namespace EFParentChild
 {
     public class Child
     {
